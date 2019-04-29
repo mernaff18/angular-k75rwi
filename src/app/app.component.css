@@ -87,5 +87,17 @@ p {
   background-position: center right;
   position:relative;
 }
-
-
+.br-img1:after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background:url(https://cdn.jsdelivr.net/gh/mernaff18/angular-k75rwi@master/src/app/1-2.png) no-repeat;
+  background-position: center right;
+    top: 10px;
+    right: 5px;
+    position: absolute;
+    display: inline-block;
+}
+.br-img1{
+  position:relative;
+}
