@@ -104,6 +104,15 @@ p {
         position:relative;
       }
 }
-
+@media(max-width:1069px) and (min-width:850px){
+  .repo-count{
+    width: 35px !important;;
+  }
+}
+@media(max-width:849px) and (min-width:601px){
+  .repo-count{ width: 25px !important;
+    padding: 5px 0px;
+    font-size: 14px;}
+}
 
 
