@@ -85,5 +85,7 @@ p {
 {
   background:url(https://cdn.jsdelivr.net/gh/mernaff18/angular-k75rwi@master/src/app/1-2.png) no-repeat;
   background-position: center right;
+  position:relative;
 }
+
 
