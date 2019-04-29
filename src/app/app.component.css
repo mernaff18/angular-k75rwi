@@ -81,7 +81,7 @@ p {
 {
   background-color:#FF7D7B !important;
 }
-.br-img
+.br-img:after
 {
   background:url(https://cdn.jsdelivr.net/gh/mernaff18/angular-k75rwi@master/src/app/1-2.png) no-repeat;
   background-position: center right;
