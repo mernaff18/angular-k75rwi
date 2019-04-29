@@ -102,10 +102,4 @@ p {
   position:relative;
 }
 
-.ngx-pagination .current {
-    padding: 0.1875rem 0.625rem;
-    background: #A8D18D !important;
-    color: #fefefe;
-    cursor: default;
-    border-radius: 9px;
-}
+
