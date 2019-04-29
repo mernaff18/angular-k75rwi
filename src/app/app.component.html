@@ -1,0 +1,161 @@
+<hello name="{{ name }}"></hello>
+
+
+
+  <!-- main row-->
+    <div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill fxLayoutGap="5px">        
+          <div fxFlex="calc(40%-5px)" class="left-section">
+              <div fxLayout="row"  class="mat-info" fxLayoutGap="5px" fxLayout.xs="column" *ngFor="let item of arrayOne(8)  | paginate: { itemsPerPage: itemperpage, currentPage: page }">
+                 <div fxFlex="calc(15%-5px)" class="sec1 cuds" fxFlex.xs="100" fxLayoutAlign="center center">
+                      <p class="main-color main-head">CUDS</p>
+                  </div>
+                  <div fxFlex="calc(15%-5px)" class="sec2 br-img" fxFlex.xs="25">
+                      <p class="main-color sub-head">repo</p>
+                      <div class="repo-child" fxLayout="row" fxLayoutGap="5px" >
+                          <div fxFlex="calc(50%-5px)"> 
+                              <p class="repo-main"><span class="repo-count">10</span></p>
+                              <p class="footer-head">Commits</p>
+                          </div>
+                          <div fxFlex="calc(50%-5px)">
+                            <p class="repo-main"><span class="repo-count">5</span></p>
+                            <p class="footer-head">Author</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div fxFlex="calc(15%-5px)" class="sec3" fxFlex.xs="25">
+                      <p class="main-color sub-head">build</p>
+                      <div class="repo-child" fxLayout="row" fxLayoutGap="5px" >
+                          <div fxFlex="calc(33.3%-5px)"> 
+                              <p class="repo-main"><span class="repo-count repo-count-green">10</span></p>
+                              <p class="footer-head">Pass</p>
+                          </div>
+                          <div fxFlex="calc(33.3%-5px)">
+                            <p class="repo-main"><span class="repo-count repo-count-orange">5</span></p>
+                            <p class="footer-head">Fail</p>
+                          </div>
+                          <div fxFlex="calc(33.3%-5px)">
+                            <p class="repo-main"><span class="repo-count">5</span></p>
+                            <p class="footer-head">AVG Dur.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div fxFlex="calc(15%-5px)" class="sec4" fxFlex.xs="25">
+                      <p class="main-color sub-head">deploy</p>
+                      <div class="repo-child" fxLayout="row" fxLayoutGap="5px" >
+                          <div fxFlex="calc(50%-5px)"> 
+                              <p class="repo-main"><span class="repo-count repo-count-green">10</span></p>
+                              <p class="footer-head">Success</p>
+                          </div>
+                          <div fxFlex="calc(50%-5px)">
+                            <p class="repo-main"><span class="repo-count repo-count-orange">5</span></p>
+                            <p class="footer-head">Fail</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div fxFlex="calc(20%-5px)" class="sec5" fxFlex.xs="25">
+                     <p class="main-color sub-head">quality</p>
+                     <div class="repo-child" fxLayout="row" fxLayoutGap="5px">
+                          <div fxFlex="calc(25%-5px)">
+                              <p class="repo-main"><span class="repo-count">10</span></p>
+                              <p class="footer-head">Blockers</p>
+                          </div>
+                          <div fxFlex="calc(25%-5px)">
+                              <p class="repo-main"><span class="repo-count repo-count-red">10</span></p>
+                              <p class="footer-head">Vulrenable</p>
+                          </div>
+                          <div fxFlex="calc(25%-5px)">
+                             <p class="repo-main"><span class="repo-count">10</span></p>
+                            <p class="footer-head">Issues</p>                             
+                          </div>
+                          <div fxFlex="calc(25%-5px)">
+                            <p class="repo-main"><span class="repo-count">10</span></p>
+                            <p class="footer-head">Bugs</p>                            
+                          </div>
+                      </div>
+                  </div>
+                  <div fxFlex="calc(20%-5px)" class="sec6" fxFlex.xs="100">
+                      <p class="main-color sub-head">CUDS</p>
+                     
+                  </div>
+              </div>
+          </div>        
+        <!--  <div fxFlex="(10%-5px)" class="middle-section" >
+              ssssss
+          </div>
+          <div fxFlex="calc(40%-5px)" class="right-section">
+              <div fxLayout="row"  class="mat-info" fxLayoutGap="5px" fxLayout.xs="column" *ngFor="let item of arrayOne(8)  | paginate: { itemsPerPage: 2, currentPage: page }">
+                 <div fxFlex="calc(15%-5px)" class="sec1 cuds" fxFlex.xs="100" fxLayoutAlign="center center">
+                      <p class="main-color main-head">CUDS</p>
+                  </div>
+                  <div fxFlex="calc(15%-5px)" class="sec2" fxFlex.xs="25">
+                      <p class="main-color sub-head">repo</p>
+                      <div class="repo-child" fxLayout="row" fxLayoutGap="5px" >
+                          <div fxFlex="calc(50%-5px)"> 
+                              <p class="repo-main"><span class="repo-count">10</span></p>
+                              <p class="footer-head">Commits</p>
+                          </div>
+                          <div fxFlex="calc(50%-5px)">
+                            <p class="repo-main"><span class="repo-count">5</span></p>
+                            <p class="footer-head">Author</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div fxFlex="calc(15%-5px)" class="sec3" fxFlex.xs="25">
+                      <p class="main-color sub-head">build</p>
+                      <div class="repo-child" fxLayout="row" fxLayoutGap="5px" >
+                          <div fxFlex="calc(33.3%-5px)"> 
+                              <p class="repo-main"><span class="repo-count repo-count-green">10</span></p>
+                              <p class="footer-head">Pass</p>
+                          </div>
+                          <div fxFlex="calc(33.3%-5px)">
+                            <p class="repo-main"><span class="repo-count repo-count-orange">5</span></p>
+                            <p class="footer-head">Fail</p>
+                          </div>
+                          <div fxFlex="calc(33.3%-5px)">
+                            <p class="repo-main"><span class="repo-count">5</span></p>
+                            <p class="footer-head">AVG Dur.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div fxFlex="calc(15%-5px)" class="sec4" fxFlex.xs="25">
+                      <p class="main-color sub-head">deploy</p>
+                      <div class="repo-child" fxLayout="row" fxLayoutGap="5px" >
+                          <div fxFlex="calc(50%-5px)"> 
+                              <p class="repo-main"><span class="repo-count repo-count-green">10</span></p>
+                              <p class="footer-head">Success</p>
+                          </div>
+                          <div fxFlex="calc(50%-5px)">
+                            <p class="repo-main"><span class="repo-count repo-count-orange">5</span></p>
+                            <p class="footer-head">Fail</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div fxFlex="calc(20%-5px)" class="sec5" fxFlex.xs="25">
+                     <p class="main-color sub-head">quality</p>
+                     <div class="repo-child" fxLayout="row" fxLayoutGap="5px">
+                          <div fxFlex="calc(25%-5px)">
+                              <p class="repo-main"><span class="repo-count">10</span></p>
+                              <p class="footer-head">Blockers</p>
+                          </div>
+                          <div fxFlex="calc(25%-5px)">
+                              <p class="repo-main"><span class="repo-count repo-count-red">10</span></p>
+                              <p class="footer-head">Vulrenable</p>
+                          </div>
+                          <div fxFlex="calc(25%-5px)">
+                             <p class="repo-main"><span class="repo-count">10</span></p>
+                            <p class="footer-head">Issues</p>                             
+                          </div>
+                          <div fxFlex="calc(25%-5px)">
+                            <p class="repo-main"><span class="repo-count">10</span></p>
+                            <p class="footer-head">Bugs</p>                            
+                          </div>
+                      </div>
+                  </div>
+                  <div fxFlex="calc(20%-5px)" class="sec6" fxFlex.xs="100">
+                      <p class="main-color sub-head">CUDS</p>
+                  </div>
+              </div>
+          </div>-->
+    </div>
+  <!-- main row-->
+<pagination-controls (pageChange)="page = $event"></pagination-controls>
