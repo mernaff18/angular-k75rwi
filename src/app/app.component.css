@@ -93,8 +93,8 @@ p {
     height: 30px;
     background:url(https://cdn.jsdelivr.net/gh/mernaff18/angular-k75rwi@master/src/app/1-2.png) no-repeat;
   background-position: center right;
-    top: 10px;
-    right: 5px;
+    top: 0px;
+    right: 13px;
     position: absolute;
     display: inline-block;
 }
