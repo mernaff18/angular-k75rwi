@@ -5,9 +5,9 @@
   <!-- main row-->
     <div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill fxLayoutGap="5px">        
           <div fxFlex="calc(40%-5px)" class="left-section">
-              <div fxLayout="row"  class="mat-info" fxLayoutGap="5px" fxLayout.xs="column" *ngFor="let item of arrayOne(8)  | paginate: { itemsPerPage: itemperpage, currentPage: page }">
+              <div fxLayout="row"  class="mat-info" fxLayoutGap="5px" fxLayout.xs="column" *ngFor="let item of arrayOne(8)| paginate: { itemsPerPage: itemperpage, currentPage: page }; let i = index">
                  <div fxFlex="calc(15%-5px)" class="sec1 cuds" fxFlex.xs="100" fxLayoutAlign="center center">
-                      <p class="main-color main-head">CUDS</p>
+                      <p class="main-color main-head">CUDS {{i}}</p>
                   </div>
                   <div fxFlex="calc(15%-5px)" class="sec2 br-img" fxFlex.xs="25">
                       <p class="main-color sub-head">repo</p>
