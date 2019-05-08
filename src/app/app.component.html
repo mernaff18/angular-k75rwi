@@ -1,7 +1,7 @@
 <hello name="{{ name }}"></hello>
 
 
-
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
   <!-- main row-->
     <div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill fxLayoutGap="5px">        
           <div fxFlex="calc(40%-5px)" class="left-section">
@@ -160,6 +160,13 @@
   <!-- main row-->
 <pagination-controls (pageChange)="page = $event"></pagination-controls>
 
+<div class="form-group">
+    <label>First Name</label>
+    <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+        <div *ngIf="f.firstName.errors.required">First Name is required</div>
+    </div>
+</div>
 
 	<pagination-template #api="paginationApi"
                       class="custom-page-controls"
@@ -172,6 +179,7 @@
         </div>
 
         <div class="pagination-next hidden-f" [class.show-s]="api.isLastPage()">
-            <a (click)="api.next()"> Submit </a>
+            <a (click)="onSubmit()"> Submit </a>
         </div>
     </pagination-template>
+</form>

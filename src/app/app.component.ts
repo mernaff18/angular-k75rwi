@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient,HttpErrorResponse } from '@angular/common/http';
-
+import {FormControl} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
@@ -11,7 +12,7 @@ export class AppComponent  {
   page: number = 1;
   itemperpage: number =2;
   
-constructor (private http: HttpClient) { 
+constructor (private http: HttpClient,private formBuilder: FormBuilder) { 
  
 }
 
@@ -77,11 +78,30 @@ reports = [{
     "build": "5" 
 }];
 
-  ngOnInit () {
-    
-  }
-  arrayOne(n: number): any[] {
-    return Array(n);
-  }
+registerForm: FormGroup;
+    submitted = false;
+
+   
+
+    ngOnInit() {
+        this.registerForm = this.formBuilder.group({
+            firstName: ['', Validators.required],
+            
+        });
+    }
+
+    // convenience getter for easy access to form fields
+    get f() { return this.registerForm.controls; }
+
+    onSubmit() {
+        this.submitted = true;
+
+        // stop here if form is invalid
+        if (this.registerForm.invalid) {
+            return;
+        }
+
+        console.log("success" + this.registerForm.value.firstName);
+    }
   
 }
