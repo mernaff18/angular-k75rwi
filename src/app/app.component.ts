@@ -14,18 +14,29 @@ export class AppComponent  {
 constructor (private http: HttpClient) { 
  
 }
-reports: any;
+
+
+reports = [{
+    "ID": "001",
+   "Name": "CUDS",
+    "repo": "10",
+    "build": "5"
+},
+{
+    "ID": "002",
+    "Name": "clsd",
+    "repo": "10",
+    "build": "5" 
+},
+{
+    "ID": "003",
+    "Name": "cuds",
+    "repo": "10",
+    "build": "5" 
+}];
 
   ngOnInit () {
-    this.http.get('data/data.json').subscribe(
-      data => {
-        this.reports = data;
-        console.log(this.reports);
-      },
-      (err: HttpErrorResponse) => {
-        console.log (err.message);
-      }
-    );
+    
   }
   arrayOne(n: number): any[] {
     return Array(n);

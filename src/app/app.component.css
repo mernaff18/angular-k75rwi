@@ -116,3 +116,31 @@ p {
 }
 
 
+
+.custom-page-controls {
+  display: flex;
+  justify-content: center;
+}
+
+.custom-page-controls > div > a {
+  border: 1px solid gray;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.custom-page-controls > div.disabled > a {
+  color: #aaa;
+  border-color: #aaa;
+}
+
+.hidden-f{
+  display:none;
+}
+.custom-page-controls > div.show-s
+{
+  display:block !important;
+}
+
+

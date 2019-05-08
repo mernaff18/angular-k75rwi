@@ -5,9 +5,9 @@
   <!-- main row-->
     <div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill fxLayoutGap="5px">        
           <div fxFlex="calc(40%-5px)" class="left-section">
-              <div fxLayout="row"  class="mat-info" fxLayoutGap="5px" fxLayout.xs="column" *ngFor="let item of arrayOne(8)| paginate: { itemsPerPage: itemperpage, currentPage: page }; let i = index">
+              <div fxLayout="row"  class="mat-info" fxLayoutGap="5px" fxLayout.xs="column" *ngFor="let item of reports | paginate: { itemsPerPage: itemperpage, currentPage: page }">
                  <div fxFlex="calc(15%-5px)" class="sec1 cuds" fxFlex.xs="100" fxLayoutAlign="center center">
-                      <p class="main-color main-head">CUDS {{i}}</p>
+                      <p class="main-color main-head">{{item.Name}} - {{item.ID}}</p>
                   </div>
                   <div fxFlex="calc(15%-5px)" class="sec2 br-img" fxFlex.xs="25">
                       <p class="main-color sub-head">repo</p>
@@ -159,3 +159,19 @@
     </div>
   <!-- main row-->
 <pagination-controls (pageChange)="page = $event"></pagination-controls>
+
+
+	<pagination-template #api="paginationApi"
+                      class="custom-page-controls"
+                     (pageChange)="page = $event">
+        <div class="pagination-previous" [class.disabled]="api.isFirstPage()">
+            <a (click)="api.previous()"> Previous </a>
+        </div>
+        <div class="pagination-next" [class.disabled]="api.isLastPage()">
+            <a (click)="api.next()"> Next </a>
+        </div>
+
+        <div class="pagination-next hidden-f" [class.show-s]="api.isLastPage()">
+            <a (click)="api.next()"> Submit </a>
+        </div>
+    </pagination-template>
