@@ -142,5 +142,15 @@ p {
 {
   display:block !important;
 }
+.submit
+{
+  border: 1px solid green;
+  background:green;
+  color:white;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  user-select: none;
+}
 
 
