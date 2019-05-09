@@ -1,9 +1,9 @@
-<hello name="{{ name }}"></hello>
+<!--hello name="{{ name }}"></hello>
 
 
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-  <!-- main row-->
-    <div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill fxLayoutGap="5px">        
+ main row-->
+   <!-- <div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill fxLayoutGap="5px">        
           <div fxFlex="calc(40%-5px)" class="left-section">
               <div fxLayout="row"  class="mat-info" fxLayoutGap="5px" fxLayout.xs="column" *ngFor="let item of reports | paginate: { itemsPerPage: itemperpage, currentPage: page }">
                  <div fxFlex="calc(15%-5px)" class="sec1 cuds" fxFlex.xs="100" fxLayoutAlign="center center">
@@ -155,9 +155,9 @@
                       <p class="main-color sub-head">CUDS</p>
                   </div>
               </div>
-          </div>-->
-    </div>
-  <!-- main row-->
+          </div>
+    </div>-->
+  <!-- main row
 <pagination-controls (pageChange)="page = $event"></pagination-controls>
 
 <div class="form-group">
@@ -182,4 +182,33 @@
             <button type="submit" class="submit"> Submit </button>
         </div>
     </pagination-template>
-</form>
+</form>-->
+<div class="questions-sheet"> 
+  <div class="questions">
+    <div class="question-answer" *ngFor="let ques of questionsanswer | paginate: { itemsPerPage: 1, currentPage: ps }">
+      <p>
+        <span>{{ques.number}}.</span>&nbsp;{{ques.question}}</p>
+      <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="ques.correctAns">
+        <mat-radio-button class="example-radio-button" *ngFor="let answers of ques.answers" [value]="answers">
+          {{answers}}
+        </mat-radio-button>
+      </mat-radio-group>
+      <div>Your Answer is: {{ques.correctAns}}</div>
+    </div>
+    <div class="pagination-section">
+      <pagination-template #api="paginationApi" class="custom-page-controls" (pageChange)="ps = $event">
+        <div class="pagination-previous" [class.disabled]="api.isFirstPage()">
+          <a (click)="api.previous()"> Previous </a>
+        </div>
+        <div class="pagination-next" [class.disabled]="api.isLastPage()">
+          <a (click)="api.next()"> Next </a>
+        </div>
+
+        <div class="pagination-next hidden-f" [class.show-s]="api.isLastPage()">
+          <a (click)="print()" type="submit" class="submit"> Submit </a>
+        </div>
+      </pagination-template>
+    </div>
+  </div>
+
+</div>
