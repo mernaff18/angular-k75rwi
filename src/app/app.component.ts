@@ -89,8 +89,7 @@ submitted = false;
             firstName: ['', Validators.required],
             
         });
-        this.removeDuplicate(this.newarray);
-        this.displayarray(this.newarray);
+        
     }
 
 displayarray(near){
@@ -182,6 +181,9 @@ removeDuplicate(arry){
         }
       }
       console.log(this.myAnswers);
+
+        this.removeDuplicate(this.myAnswers);
+        this.displayarray(this.myAnswers);
      
     
   }
