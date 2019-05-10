@@ -79,9 +79,9 @@ reports = [{
 }];
 
 registerForm: FormGroup;
-    submitted = false;
- num = [5, 2, 3, 4, 9, 3, 5];
-unique_numbers = Array.from(new Set(this.num));
+submitted = false;
+
+
    
 
     ngOnInit() {
@@ -89,9 +89,6 @@ unique_numbers = Array.from(new Set(this.num));
             firstName: ['', Validators.required],
             
         });
-
-        console.log(this.num);
-        console.log(this.unique_numbers);
     }
 
     // convenience getter for easy access to form fields
@@ -116,14 +113,16 @@ unique_numbers = Array.from(new Set(this.num));
   correctAnswer:any = [];
   choosedAnswer:any = [];
   score : any = 0;
-  answerOnselect(questionNo,correctAnswer,choosedAnswer){      
-            this.myAnswers.push(
+  answerOnselect(questionNo,correctAnswer,choosedAnswer){ 
+        this.myAnswers.push(
               { 
                 "questionNo":questionNo,
                 "correctAnswer":correctAnswer,
                 "choosedAnswer":choosedAnswer.value
               }
-          );
+        );
+        
+        
   }
 
 
@@ -155,9 +154,28 @@ unique_numbers = Array.from(new Set(this.num));
           }
           console.log("--------------------------------------------");
           console.log("your Score is  " + this.score);
+          
         }
       }
-       
+      console.log(this.myAnswers);
+      for(let j=0;j<this.myAnswers.length;j++){
+         for(let k=0;k<j;k++){
+             if(this.questionNo[k] == this.questionNo[j]){
+                 console.log("check");
+                 console.log(this.questionNo[k] = this.questionNo[j]);
+                 console.log(this.correctAnswer[k] = this.correctAnswer[j]);
+                 console.log(this.choosedAnswer[k] = this.choosedAnswer[j]);
+                 console.log("----------------------------------");
+             }
+             else
+             {
+                  console.log(this.questionNo[k] = this.questionNo[k]);
+                 console.log(this.correctAnswer[k] = this.correctAnswer[k]);
+                 console.log(this.choosedAnswer[k] = this.choosedAnswer[k]);
+                 console.log("----------------------------------");
+             }
+         }
+      }
     
   }
   questionsanswer=[
