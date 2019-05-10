@@ -112,8 +112,7 @@ registerForm: FormGroup;
   correctAnswer:any = [];
   choosedAnswer:any = [];
   score : any = 0;
-  answerOnselect(questionNo,correctAnswer,choosedAnswer){ 
-     
+  answerOnselect(questionNo,correctAnswer,choosedAnswer){      
             this.myAnswers.push(
               { 
                 "questionNo":questionNo,
@@ -121,7 +120,6 @@ registerForm: FormGroup;
                 "choosedAnswer":choosedAnswer.value
               }
           );
-  
         
   }
 
