@@ -100,6 +100,7 @@ submitted = false;
 }*/
 removeDuplicate(arry){
      console.log("arry length   " +arry.length);
+     console.log(arry);
      let temp = {};
      let j = 0;
      for(let i=0;i<arry.length;i++){
