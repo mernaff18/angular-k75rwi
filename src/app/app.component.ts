@@ -80,7 +80,8 @@ reports = [{
 
 registerForm: FormGroup;
     submitted = false;
-
+ num = [5, 2, 3, 4, 9, 3, 5];
+unique_numbers = Array.from(new Set(this.num));
    
 
     ngOnInit() {
@@ -88,6 +89,9 @@ registerForm: FormGroup;
             firstName: ['', Validators.required],
             
         });
+
+        console.log(this.num);
+        console.log(this.unique_numbers);
     }
 
     // convenience getter for easy access to form fields
@@ -120,8 +124,9 @@ registerForm: FormGroup;
                 "choosedAnswer":choosedAnswer.value
               }
           );
-        
   }
+
+
 
 
 
