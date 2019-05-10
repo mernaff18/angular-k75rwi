@@ -188,8 +188,7 @@ removeDuplicate(arry){
         }
       }
       console.log(this.myAnswers);
-
-        this.removeDuplicate(this.myAnswers);
+      this.removeDuplicate(this.myAnswers);
         //this.displayarray(this.myAnswers);
      
     
