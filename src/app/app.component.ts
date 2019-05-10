@@ -158,24 +158,7 @@ submitted = false;
         }
       }
       console.log(this.myAnswers);
-      for(let j=0;j<this.myAnswers.length;j++){
-         for(let k=0;k<j;k++){
-             if(this.questionNo[k] == this.questionNo[j]){
-                 console.log("check");
-                 console.log(this.questionNo[k] = this.questionNo[j]);
-                 console.log(this.correctAnswer[k] = this.correctAnswer[j]);
-                 console.log(this.choosedAnswer[k] = this.choosedAnswer[j]);
-                 console.log("----------------------------------");
-             }
-             else
-             {
-                  console.log(this.questionNo[k] = this.questionNo[k]);
-                 console.log(this.correctAnswer[k] = this.correctAnswer[k]);
-                 console.log(this.choosedAnswer[k] = this.choosedAnswer[k]);
-                 console.log("----------------------------------");
-             }
-         }
-      }
+     
     
   }
   questionsanswer=[
