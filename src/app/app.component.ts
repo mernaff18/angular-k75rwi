@@ -105,7 +105,10 @@ removeDuplicate(arry){
      let j = 0;
      for(let i=0;i<arry.length;i++){
        temp[arry[i].questionNo]=j; 
-       console.log(temp[arry[i].questionNo]) ;    
+       console.log(temp[arry[i].questionNo]) ; 
+      // console.log(temp[arry[i].correctAnswer]) ;
+       //console.log(temp[arry[i].choosedAnswer]) ;
+         
        j++;
        
      }
