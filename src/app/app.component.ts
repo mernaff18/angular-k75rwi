@@ -113,13 +113,38 @@ registerForm: FormGroup;
   choosedAnswer:any = [];
   score : any = 0;
   answerOnselect(questionNo,correctAnswer,choosedAnswer){ 
-        this.myAnswers.push(
-          { 
-            "questionNo":questionNo,
-            "correctAnswer":correctAnswer,
-            "choosedAnswer":choosedAnswer.value
+
+      if(this.myAnswers.length<=0){
+            this.myAnswers.push(
+              { 
+                "questionNo":questionNo,
+                "correctAnswer":correctAnswer,
+                "choosedAnswer":choosedAnswer.value
+              }
+          );
+      }
+      else
+      {
+          for(let i =0; i<this.myAnswers.length;i++){
+              if(this.questionNo[i] = questionNo)
+              {
+
+              }
+              else
+              {
+                this.myAnswers.push(
+                    { 
+                      "questionNo":questionNo,
+                      "correctAnswer":correctAnswer,
+                      "choosedAnswer":choosedAnswer.value
+                    }
+                );
+              }
+              
           }
-      );
+
+      }
+        
   }
  
   submitExam() {
