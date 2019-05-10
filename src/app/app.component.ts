@@ -81,16 +81,29 @@ reports = [{
 registerForm: FormGroup;
 submitted = false;
 
-
-   
+  newarray:any = ["john","Rose","Aaron","Sarah","Rose","Kevin","Sarah"];
+  
 
     ngOnInit() {
         this.registerForm = this.formBuilder.group({
             firstName: ['', Validators.required],
             
         });
+        this.removeDuplicate(this.newarray);
     }
-
+removeDuplicate(arry){
+     let temp = {};
+     let j = 1;
+     for(let i=0;i<arry.length;i++){
+       temp[arry[i]]=j;
+       j++;
+     }
+     let final = [];
+     for(let key in temp){
+       final.push(key);
+     }
+     console.log(final);
+}
     // convenience getter for easy access to form fields
     get f() { return this.registerForm.controls; }
 
@@ -113,6 +126,8 @@ submitted = false;
   correctAnswer:any = [];
   choosedAnswer:any = [];
   score : any = 0;
+
+
   answerOnselect(questionNo,correctAnswer,choosedAnswer){ 
         this.myAnswers.push(
               { 
