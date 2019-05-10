@@ -99,9 +99,9 @@ displayarray(near){
 }
 removeDuplicate(arry){
      let temp = {};
-     let j = 1;
+     let j = 0;
      for(let i=0;i<arry.length;i++){
-       temp[arry[i]]=j;      
+       temp[arry[i]]=1;      
        j++;
       console.log(temp);
      }
