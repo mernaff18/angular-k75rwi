@@ -107,7 +107,7 @@ removeDuplicate(arry){
        temp[arry[i].questionNo]=j; 
        console.log(temp[arry[i].questionNo]) ;    
        j++;
-      console.log("temp " + temp);
+       console.log("temp " + temp);
      }
      //this.displayarray(temp);
      let final = [];
