@@ -114,7 +114,7 @@ registerForm: FormGroup;
   score : any = 0;
   answerOnselect(questionNo,correctAnswer,choosedAnswer){ 
 
-      if(this.myAnswers.length<=0){
+      if(this.myAnswers.length==0){
             this.myAnswers.push(
               { 
                 "questionNo":questionNo,
