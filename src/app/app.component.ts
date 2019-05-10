@@ -214,3 +214,7 @@ submitted = false;
     }
   ]
 }
+
+
+
+//https://coderwall.com/p/_ggh2w/the-array-native-every-filter-map-some-foreach-methods
