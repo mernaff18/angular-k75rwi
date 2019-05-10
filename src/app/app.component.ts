@@ -90,14 +90,23 @@ submitted = false;
             
         });
         this.removeDuplicate(this.newarray);
+        this.displayarray(this.newarray);
     }
+
+displayarray(near){
+   for(let p in near){
+     console.log(p + "   " +near[p]);
+   }
+}
 removeDuplicate(arry){
      let temp = {};
      let j = 1;
      for(let i=0;i<arry.length;i++){
-       temp[arry[i]]=j;
+       temp[arry[i]]=j;      
        j++;
+      console.log(temp);
      }
+     this.displayarray(temp);
      let final = [];
      for(let key in temp){
        final.push(key);
