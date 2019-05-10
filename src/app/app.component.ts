@@ -125,8 +125,8 @@ registerForm: FormGroup;
       }
       else
       {
-          for(let i =0; i<this.myAnswers.length;i++){
-              if(this.questionNo[i] = questionNo)
+          
+              if(this.questionNo = questionNo)
               {
 
               }
@@ -141,7 +141,7 @@ registerForm: FormGroup;
                 );
               }
               
-          }
+         
 
       }
         
