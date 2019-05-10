@@ -161,7 +161,20 @@ submitted = false;
         }
       }
       
-      this.myAnswers = this.myAnswers.filter((el, i, a) => i === a.indexOf(el));
+     for(let j =0; j<this.myAnswers.length;j++){
+      
+       for(let k = 1 ; k<=this.myAnswers.length;k++){
+              if(this.myAnswers[j].questionNo == this.myAnswers[k].questionNo){
+                console.log("same");
+              }
+              else
+              {
+                console.log("not same")
+              }
+       } 
+      
+     }
+
       console.log(this.myAnswers);
      
   }
