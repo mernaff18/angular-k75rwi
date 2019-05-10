@@ -119,7 +119,7 @@ registerForm: FormGroup;
             "correctAnswer":correctAnswer,
             "choosedAnswer":choosedAnswer.value
           }
-          );
+        );
   }
  
   submitExam() {
