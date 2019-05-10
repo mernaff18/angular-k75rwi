@@ -81,7 +81,7 @@ reports = [{
 registerForm: FormGroup;
 submitted = false;
 
-  newarray:any = ["john","Rose","Aaron","Sarah","Rose","Kevin","Sarah"];
+ 
   
 
     ngOnInit() {
@@ -89,36 +89,9 @@ submitted = false;
             firstName: ['', Validators.required],
             
         });
-       // this.removeDuplicate(this.newarray);
-        //this.displayarray(this.newarray);
+      
     }
 
-/*displayarray(near){
-   for(let p in near){
-     console.log(p + " asdasd  " +near[p]);
-   }
-}*/
-removeDuplicate(arry){
-     console.log("arry length   " +arry.length);
-     console.log(arry);
-     let temp = {};
-     let j = 0;
-     for(let i=0;i<arry.length;i++){
-       temp[arry[i].questionNo]=j; 
-       console.log(temp[arry[i].questionNo]) ; 
-      // console.log(temp[arry[i].correctAnswer]) ;
-       //console.log(temp[arry[i].choosedAnswer]) ;
-         
-       j++;
-       
-     }
-     //this.displayarray(temp);
-     let final = [];
-     for(let key in temp){
-       final.push(key);
-    }
-     console.log("final  " +final);
-}
     // convenience getter for easy access to form fields
     get f() { return this.registerForm.controls; }
 
@@ -187,11 +160,10 @@ removeDuplicate(arry){
           
         }
       }
+      
+      this.myAnswers = this.myAnswers.filter((el, i, a) => i === a.indexOf(el));
       console.log(this.myAnswers);
-      this.removeDuplicate(this.myAnswers);
-        //this.displayarray(this.myAnswers);
      
-    
   }
   questionsanswer=[
     {
