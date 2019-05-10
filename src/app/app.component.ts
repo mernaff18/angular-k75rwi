@@ -110,7 +110,7 @@ removeDuplicate(arry){
      let final = [];
      for(let key in temp){
        final.push(key);
-     }
+    }
      console.log(final);
 }
     // convenience getter for easy access to form fields
