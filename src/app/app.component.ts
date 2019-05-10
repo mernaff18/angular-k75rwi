@@ -104,7 +104,7 @@ removeDuplicate(arry){
      let temp = {};
      let j = 0;
      for(let i=0;i<arry.length;i++){
-       temp[arry[i]]=1;      
+       temp[arry[i]]=j;      
        j++;
       console.log("temp " + temp);
      }
