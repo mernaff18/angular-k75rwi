@@ -113,8 +113,7 @@ registerForm: FormGroup;
   choosedAnswer:any = [];
   score : any = 0;
   answerOnselect(questionNo,correctAnswer,choosedAnswer){ 
-     console.log(this.myAnswers.length);
-      if(this.myAnswers.length<=0){
+     
             this.myAnswers.push(
               { 
                 "questionNo":questionNo,
@@ -122,31 +121,12 @@ registerForm: FormGroup;
                 "choosedAnswer":choosedAnswer.value
               }
           );
-      }
-      else
-      {
-          for(let i =0; i<this.myAnswers.length;i++){
-              if(this.questionNo[i] == questionNo)
-              {
-
-              }
-              else
-              {
-                this.myAnswers.push(
-                    { 
-                      "questionNo":questionNo,
-                      "correctAnswer":correctAnswer,
-                      "choosedAnswer":choosedAnswer.value
-                    }
-                );
-              }
-              
-          }
-
-      }
+  
         
   }
- 
+
+
+
   submitExam() {
     
       if(this.myAnswers.length<=0){
