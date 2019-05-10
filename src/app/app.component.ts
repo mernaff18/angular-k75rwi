@@ -103,13 +103,54 @@ registerForm: FormGroup;
 
         console.log("success" + this.registerForm.value.firstName);
     }
-  ps: number = 1;
-  correctAns : any ;
-  items: Array<string> = [];
 
+
+  ps: number = 1;
+  correctAns : any ;  
+  myAnswers :any =[];
+  questionNo:any = [];
+  correctAnswer:any = [];
+  choosedAnswer:any = [];
+  score : any = 0;
+  answerOnselect(questionNo,correctAnswer,choosedAnswer){ 
+        this.myAnswers.push(
+          { 
+            "questionNo":questionNo,
+            "correctAnswer":correctAnswer,
+            "choosedAnswer":choosedAnswer.value
+          }
+          );
+  }
  
-  print() {
-    console.log(this.questionsanswer)
+  submitExam() {
+    
+      if(this.myAnswers.length<=0){
+            console.log("your Score is  " + this.score)
+      }
+      else{
+        for(let i =0; i<this.myAnswers.length;i++){
+          this.questionNo[i] = this.myAnswers[i].questionNo;
+          this.correctAnswer[i] = this.myAnswers[i].correctAnswer;
+          this.choosedAnswer[i] = this.myAnswers[i].choosedAnswer;            
+          console.log("Question No  " + this.questionNo[i]);
+          console.log("Correct Answer  " + this.correctAnswer[i]);
+          console.log("Choosed Answer  " + this.choosedAnswer[i]);
+          console.log("--------------------------------------------");
+          if( this.correctAnswer[i] === this.choosedAnswer[i]) {
+            console.log("Your answer is Correct");
+            this.score = this.score + 10;
+          }
+          else
+          {
+            console.log("Your Answer is Wrong");
+              this.score = this.score;
+          }
+          console.log("--------------------------------------------");
+          console.log("your Score is  " + this.score);
+        }
+      }
+       
+    
   }
   questionsanswer=[
     {
@@ -120,7 +161,7 @@ registerForm: FormGroup;
         "0.018",
         "0.18"
       ],
-      "correct_answer": 1
+      "correct_answer": "0.0018"
     },
     {
       "number": 2,
@@ -131,7 +172,31 @@ registerForm: FormGroup;
         "14",
         "15"
       ],
-      "correct_answer": 4
+      "correct_answer": "14"
+    }
+    ,
+    {
+      "number": 3,
+      "question": "The next number in the sequence <b>1, 3, 6, 10, </b> is:",
+      "answers": [
+        "12",
+        "13",
+        "14",
+        "15"
+      ],
+      "correct_answer": "14"
+    }
+    ,
+    {
+      "number": 4,
+      "question": "The next number in the sequence <b>1, 3, 6, 10, </b> is:",
+      "answers": [
+        "12",
+        "13",
+        "14",
+        "15"
+      ],
+      "correct_answer": "14"
     }
   ]
 }

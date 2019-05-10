@@ -1,6 +1,4 @@
 <!--hello name="{{ name }}"></hello>
-
-
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
  main row-->
    <!-- <div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill fxLayoutGap="5px">        
@@ -189,7 +187,7 @@
       <p>
         <span>{{ques.number}}.</span>&nbsp;{{ques.question}}</p>
       <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="ques.correctAns">
-        <mat-radio-button class="example-radio-button" *ngFor="let answers of ques.answers" [value]="answers">
+        <mat-radio-button class="example-radio-button" *ngFor="let answers of ques.answers" [value]="answers" (change)="answerOnselect(ques.number,ques.correct_answer,$event)">
           {{answers}}
         </mat-radio-button>
       </mat-radio-group>
@@ -203,9 +201,8 @@
         <div class="pagination-next" [class.disabled]="api.isLastPage()">
           <a (click)="api.next()"> Next </a>
         </div>
-
         <div class="pagination-next hidden-f" [class.show-s]="api.isLastPage()">
-          <a (click)="print()" type="submit" class="submit"> Submit </a>
+          <a (click)="submitExam()" type="submit" class="submit"> Submit </a>
         </div>
       </pagination-template>
     </div>
