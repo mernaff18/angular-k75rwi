@@ -89,28 +89,30 @@ submitted = false;
             firstName: ['', Validators.required],
             
         });
-        
+       // this.removeDuplicate(this.newarray);
+        //this.displayarray(this.newarray);
     }
 
-displayarray(near){
+/*displayarray(near){
    for(let p in near){
-     console.log(p + "   " +near[p]);
+     console.log(p + " asdasd  " +near[p]);
    }
-}
+}*/
 removeDuplicate(arry){
+     console.log("arry length   " +arry.length);
      let temp = {};
      let j = 0;
      for(let i=0;i<arry.length;i++){
        temp[arry[i]]=1;      
        j++;
-      console.log(temp);
+      console.log("temp " + temp);
      }
-     this.displayarray(temp);
+     //this.displayarray(temp);
      let final = [];
      for(let key in temp){
        final.push(key);
     }
-     console.log(final);
+     console.log("final  " +final);
 }
     // convenience getter for easy access to form fields
     get f() { return this.registerForm.controls; }
