@@ -210,7 +210,7 @@ submitted = false;
           } 
           else
           {
-            this.myAnswers.splice(i,1)
+            this.myAnswers.splice(i,1);
           }
         })
       }
