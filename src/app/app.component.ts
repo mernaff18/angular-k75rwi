@@ -166,6 +166,57 @@ submitted = false;
       console.log(this.myAnswers);
      
   }*/
+
+  answerOnselect(questionNo,correctAnswer,choosedAnswer){
+    
+    if(questionNo>0)
+    {
+       this.myAnswers[questionNo] =
+        
+              { 
+                "questionNo":questionNo,
+                "correctAnswer":correctAnswer,
+                "choosedAnswer":choosedAnswer.value
+              }
+    } 
+  }
+
+
+
+
+  submitExam() {
+      
+      if(this.myAnswers.length<=0){
+            console.log("your Score is  " + this.score)
+      }
+      else{
+        this.myAnswers.filter((v,i)=>{
+          if(!v.undefined)  {         
+          console.log("Question No  " + v.questionNo);
+          console.log("Correct Answer  " + v.correctAnswer);
+          console.log("Choosed Answer  " + v.choosedAnswer);
+          console.log("--------------------------------------------");
+          if( v.correctAnswer=== v.choosedAnswer) {
+            console.log("Your answer is Correct");
+            this.score = this.score + 10;
+          }
+          else
+          {
+            console.log("Your Answer is Wrong");
+              this.score = this.score;
+          }
+          console.log("--------------------------------------------");
+          console.log("your Score is  " + this.score);
+          } 
+          else
+          {
+            this.myAnswers.splice(i,1)
+          }
+        })
+      }
+      console.log(this.myAnswers);
+     
+  }
   questionsanswer=[
     {
       "number": 1,
