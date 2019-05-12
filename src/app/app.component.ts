@@ -205,7 +205,7 @@ submitted = false;
                 console.log("Your Answer is Wrong");
                   this.score = this.score;
               }
-              console.log("--------------------------------------------");
+              console.log("--------------------splice------------------------");
               console.log("your Score is  " + this.score);
           } 
           else
