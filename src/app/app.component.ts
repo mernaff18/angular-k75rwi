@@ -168,9 +168,7 @@ submitted = false;
   }*/
 
   answerOnselect(questionNo,correctAnswer,choosedAnswer){
-    
-    if(questionNo>0)
-    {
+  
        this.myAnswers[questionNo] =
         
               { 
@@ -178,7 +176,7 @@ submitted = false;
                 "correctAnswer":correctAnswer,
                 "choosedAnswer":choosedAnswer.value
               }
-    } 
+    
   }
 
 
