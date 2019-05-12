@@ -116,7 +116,7 @@ submitted = false;
   score : any = 0;
 
 
-  answerOnselect(questionNo,correctAnswer,choosedAnswer){ 
+  /*answerOnselect(questionNo,correctAnswer,choosedAnswer){ 
         this.myAnswers.push(
               { 
                 "questionNo":questionNo,
@@ -165,7 +165,7 @@ submitted = false;
       }
       console.log(this.myAnswers);
      
-  }
+  }*/
   questionsanswer=[
     {
       "number": 1,
