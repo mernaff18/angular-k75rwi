@@ -210,6 +210,7 @@ submitted = false;
           } 
           else
           {
+            console.log("splice one item");
             this.myAnswers.splice(i,1);
           }
         })
