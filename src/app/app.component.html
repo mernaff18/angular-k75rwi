@@ -183,9 +183,7 @@
 </form>-->
 <div class="questions-sheet"> 
   <div class="questions">
-    <mat-form-field>
-    <input matInput placeholder="Input">
-  </mat-form-field>
+  
     <div class="question-answer" *ngFor="let ques of questionsanswer | paginate: { itemsPerPage: 1, currentPage: ps }">
       <p>
         <span>{{ques.number}}.</span>&nbsp;{{ques.question}}</p>
