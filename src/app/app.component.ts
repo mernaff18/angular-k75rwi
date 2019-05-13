@@ -183,8 +183,7 @@ submitted = false;
 
 
 
-  submitExam() {
-      
+  submitExam() {      
       if(this.myAnswers.length<=0){
             console.log("your Score is  " + this.score)
       }
