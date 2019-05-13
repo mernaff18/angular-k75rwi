@@ -1,4 +1,5 @@
 /* Add application styles & imports to this file! */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 .ngx-pagination .current {
     padding: 0.1875rem 0.625rem;
