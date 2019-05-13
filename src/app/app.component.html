@@ -185,8 +185,8 @@
   <div class="questions">
   
     <div class="question-answer" *ngFor="let ques of questionsanswer | paginate: { itemsPerPage: 1, currentPage: ps }">
-      <p>
-        <span>{{ques.number}}.</span>&nbsp;{{ques.question}}</p>
+      <p class="questions">
+        <span class="question-no">{{ques.number}}.</span>&nbsp;{{ques.question}}</p>
       <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="ques.correctAns">
         <mat-radio-button class="answer-radio-button" *ngFor="let answers of ques.answers" [value]="answers" (change)="answerOnselect(ques.number,ques.correct_answer,$event)">
           {{answers}}
