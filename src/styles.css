@@ -26,3 +26,13 @@
 {
 
 }
+.questions-sheet
+{
+    max-width: 600px;
+    margin: 0 auto;
+}
+.pagination-section
+{
+  margin-top: 50px;
+  margin-bottom:50px;
+}
