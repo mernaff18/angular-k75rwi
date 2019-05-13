@@ -8,3 +8,10 @@
     cursor: default;
     border-radius: 9px;
 }
+
+.answer-radio-button
+{
+  display:block;
+  margin-top:10px;
+  margin-bottom: 10px;
+}

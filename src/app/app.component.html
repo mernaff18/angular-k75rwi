@@ -188,7 +188,7 @@
       <p>
         <span>{{ques.number}}.</span>&nbsp;{{ques.question}}</p>
       <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="ques.correctAns">
-        <mat-radio-button class="example-radio-button" *ngFor="let answers of ques.answers" [value]="answers" (change)="answerOnselect(ques.number,ques.correct_answer,$event)">
+        <mat-radio-button class="answer-radio-button" *ngFor="let answers of ques.answers" [value]="answers" (change)="answerOnselect(ques.number,ques.correct_answer,$event)">
           {{answers}}
         </mat-radio-button>
       </mat-radio-group>
