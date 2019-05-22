@@ -1,7 +1,7 @@
-<!--hello name="{{ name }}"></hello>
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+<hello name="{{ name }}"></hello>
+<!--<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
  main row-->
-   <!-- <div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill fxLayoutGap="5px">        
+   <div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill fxLayoutGap="5px">        
           <div fxFlex="calc(40%-5px)" class="left-section">
               <div fxLayout="row"  class="mat-info" fxLayoutGap="5px" fxLayout.xs="column" *ngFor="let item of reports | paginate: { itemsPerPage: itemperpage, currentPage: page }">
                  <div fxFlex="calc(15%-5px)" class="sec1 cuds" fxFlex.xs="100" fxLayoutAlign="center center">
@@ -76,7 +76,9 @@
                      
                   </div>
               </div>
-          </div>        
+          </div>  
+</div>
+<pagination-controls (pageChange)="page = $event"></pagination-controls>      
         <!--  <div fxFlex="(10%-5px)" class="middle-section" >
               ssssss
           </div>
@@ -154,10 +156,10 @@
                   </div>
               </div>
           </div>
-    </div>-->
-  <!-- main row
-<pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </div>
+  <!-- main row-->
 
+<!--
 <div class="form-group">
     <label>First Name</label>
     <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
@@ -180,22 +182,29 @@
             <button type="submit" class="submit"> Submit </button>
         </div>
     </pagination-template>
-</form>-->
+</form>
 <div class="questions-sheet"> 
   <div class="questions">
-  
-    <div class="question-answer" *ngFor="let ques of questionsanswer | paginate: { itemsPerPage: 1, currentPage: ps }">
+   
+    <div class="question-answer"  *ngFor="let ques of questionsanswer | paginate: { currentPage: currentPage, itemsPerPage: itemsPerPage }; let i = index">
+       {{ itemsPerPage * (currentPage - 1) + i }}
+      
       <p class="questions">
         <span class="question-no">{{ques.number}}.</span>&nbsp;{{ques.question}}</p>
       <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="ques.correctAns">
-        <mat-radio-button class="answer-radio-button" *ngFor="let answers of ques.answers" [value]="answers" (change)="answerOnselect(ques.number,ques.correct_answer,$event)">
+        <mat-radio-button class="answer-radio-button" *ngFor="let answers of ques.answers" [value]="answers" (change)="answerOnselect(ques.number,ques.correct_answer,$event, (itemsPerPage * (currentPage - 1) + i))">
           {{answers}}
         </mat-radio-button>
       </mat-radio-group>
       <div>Your Answer is: {{ques.correctAns}}</div>
+
     </div>
+
+    
+
+    
     <div class="pagination-section">
-      <pagination-template #api="paginationApi" class="custom-page-controls" (pageChange)="ps = $event">
+      <pagination-template #api="paginationApi" class="custom-page-controls" (pageChange)="currentPage = $event">
         <div class="pagination-previous" [class.disabled]="api.isFirstPage()">
           <a (click)="api.previous()"> Previous </a>
         </div>
@@ -208,4 +217,5 @@
       </pagination-template>
     </div>
   </div>
-</div>
+
+</div>-->
